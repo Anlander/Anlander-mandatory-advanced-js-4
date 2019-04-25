@@ -31,3 +31,97 @@
     transform: rotate(360deg);
   }
 }
+
+
+.App {
+  background:black;
+  width: 800px;
+  height: 500px;
+  margin: auto;
+}
+
+body {
+  font-family: 'Lucida Sans Unicode';
+  background-color: black;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+}
+
+table {
+  margin: 0 auto;
+  border-spacing: 0px 0px;
+}
+
+/* background och huvud div */
+
+.head-div {
+  display: flex;
+  position: relative;
+  top: 100px;
+  height: 60px;
+  width: 60px;
+  background-color: blue;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0;
+}
+
+
+.circles {
+  margin: -40px 0 25px 0;
+  display: flex;
+  justify-content: center;
+}
+
+
+.message {
+  font-size: 17px;
+  position: relative;
+  top: -360px;
+  text-align: center;
+  color: white;
+
+}
+
+
+
+.firstplayer {
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  border-radius: 100px;
+  transition: background-color 0.5s;
+}
+
+.secoundplayer {
+  height: 40px;
+  width: 40px;
+  background-color: black;
+  border-radius: 100px;
+  transition: background-color 0.5s;
+}
+
+ /* Button layout */
+
+
+.button {
+  font-size: 25px;
+  color: black;
+  border-style: none;
+  position: relative;
+  top: 300px;
+  left: 70px;
+  text-align: center;
+  cursor: pointer;
+
+}
+
+.button:hover {
+  background-color: grey;
+  color: white;
+  transition: all 500ms;
+}
