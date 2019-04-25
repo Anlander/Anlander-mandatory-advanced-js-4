@@ -182,12 +182,12 @@ import './App.css';
   };
 
   const Back = ({ value, ind, play }) => {
-    let color = 'empty';
+    let circles = 'empty';
     console.log(ind)
     if (value === 1) {
-      color = 'firstplayer';
+      circles = 'firstplayer';
     } else if (value === 2) {
-      color = 'secondplayer';
+      circles = 'secondplayer';
     }
 
 
@@ -197,7 +197,7 @@ import './App.css';
     return (
       <td>
         <div className="head-div" onClick={() => {play(ind)}}>
-          <div className={color}></div>
+          <div className={circles}></div>
         </div>
       </td>
     );

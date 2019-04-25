@@ -50,10 +50,10 @@ body {
 .head-div {
   display: flex;
   position: relative;
-  top: 100px;
-  height: 60px;
-  width: 60px;
-  background-color: blue;
+  top: 150px;
+  height: 70px;
+  width: 70px;
+  background-color: pink;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -92,7 +92,7 @@ table {
   transition: background-color 0.5s;
 }
 
-.secoundplayer {
+.secondplayer {
   height: 40px;
   width: 40px;
   background-color: black;
@@ -108,8 +108,8 @@ table {
   color: black;
   border-style: none;
   position: relative;
-  top: 300px;
-  left: 100px;
+  top: 50px;
+  left: 50px;
   text-align: center;
   cursor: pointer;
 
