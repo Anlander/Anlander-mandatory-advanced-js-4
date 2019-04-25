@@ -178,8 +178,9 @@ import './App.css';
     }
 
   const Around = ({ row, play }) => {
+    console.log(row)
     return (
-      console.log(row)
+
       <tr>
         {row.map((cell, i) => <Back key={i} value={cell} ind={i} play={play} />)}
       </tr>
