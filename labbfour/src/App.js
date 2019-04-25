@@ -19,15 +19,6 @@ import './App.css';
       this.play = this.play.bind(this);
     }
 
-    // Startar ett nytt spel
-    newGame() {
-      let board = [];
-      console.log(board)
-      for (let first = 0; first < 6; first++) {
-        let row = [];
-        for (let sec = 0; sec < 7; sec++) { row.push(null) }
-        board.push(row);
-      }
 
       this.setState({
         board,
@@ -37,10 +28,10 @@ import './App.css';
       });
     }
 
-    togglePlayer() {
+    Playertar() {
       return (this.state.currentP === this.state.firstplayer) ? this.state.secplayer : this.state.firstplayer;
     }
-
+        // fixa.
     CheckL(board) {
       for (let first = 3; first < 6; first++) {
         for (let sec = 3; sec < 7; sec++) {
@@ -92,6 +83,8 @@ import './App.css';
                 board[first][sec] === board[first][sec + 2] &&
                 board[first][sec] === board[first][sec + 3]) {
           return board[first][sec];
+
+          // fixa H
              }
            }
          }
@@ -108,7 +101,6 @@ import './App.css';
           }
         }
 
-
         // kolla vem som vann
 
         let result = this.Call(board);
@@ -119,15 +111,25 @@ import './App.css';
         } else if (result === 'draw') {
           this.setState({ board, over: true, message: 'Draw' });
         } else {
-          this.setState({ board, currentP: this.togglePlayer() });
+          this.setState({ board, currentP: this.Playertar() });
         }
       } else {
         this.setState({ message: 'Its over, start a new game' });
       }
     }
 
-    Draw(board) {
+    // Startar ett nytt spel
+    newGame() {
+      let board = [];
       console.log(board)
+      for (let first = 0; first < 6; first++) {
+        let row = [];
+        for (let sec = 0; sec < 7; sec++) { row.push(null) }
+        board.push(row);
+      }
+
+    Draw(board) {
+      // console.log(board)
       for (let first = 0; first < 6; first++) {
         for (let sec = 0; sec < 7; sec++) {
           if (board[first][sec] === null) {
@@ -154,7 +156,7 @@ import './App.css';
             <thead>
             </thead>
             <tbody>
-              {this.state.board.map((row, i) => (<Row row={row} play={this.play} />))}
+              {this.state.board.map((row, i) => (<Around row={row} play={this.play} />))}
             </tbody>
           </table>
 
@@ -164,24 +166,26 @@ import './App.css';
     }
   }
 
-  const Row = ({ row, play }) => {
-    return (
-      <tr>
-        {row.map((cell, i) => <Cell key={i} value={cell} ind={i} play={play} />)}
-      </tr>
-    );
-  };
-
-  const Cell = ({ value, ind, play }) => {
+  const Back = ({ value, ind, play }) => {
     let color = 'empty';
     // console.log(ind)
-    console.log(value)
+    // console.log(value)
     // console.log(Row)
     if (value === 1) {
       color = 'firstplayer';
     } else if (value === 2) {
       color = 'secoundplayer';
     }
+
+  const Around = ({ row, play }) => {
+    return (
+      <tr>
+        {row.map((cell, i) => <Back key={i} value={cell} ind={i} play={play} />)}
+      </tr>
+    );
+  };
+
+
 
     return (
       <td>
