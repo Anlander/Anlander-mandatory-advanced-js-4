@@ -20,17 +20,11 @@ import './App.css';
     }
 
 
-      this.setState({
-        board,
-        over: false,
-        currentP: this.state.firstplayer,
-        message: ''
-      });
-    }
 
-    Playertar() {
-      return (this.state.currentP === this.state.firstplayer) ? this.state.secplayer : this.state.firstplayer;
-    }
+      Playertar() {
+        return (this.state.currentP === this.state.firstplayer) ? this.state.secplayer : this.state.firstplayer;
+      }
+
         // fixa.
     CheckL(board) {
       for (let first = 3; first < 6; first++) {
@@ -128,6 +122,15 @@ import './App.css';
         board.push(row);
       }
 
+      this.setState({
+        board,
+        over: false,
+        currentP: this.state.firstplayer,
+        message: ''
+      });
+    }
+
+
     Draw(board) {
       // console.log(board)
       for (let first = 0; first < 6; first++) {
@@ -137,6 +140,7 @@ import './App.css';
           }
         }
       }
+
       return 'draw';
     }
 
@@ -166,26 +170,24 @@ import './App.css';
     }
   }
 
+  const Around = ({ row, play }) => {
+    return (
+      <tr>
+        {row.map((cell, i) => <Back  value={cell} ind={i} play={play} />)}
+      </tr>
+
+    );
+  };
+
   const Back = ({ value, ind, play }) => {
     let color = 'empty';
-    // console.log(ind)
-    // console.log(value)
-    console.log(play)}
     if (value === 1) {
       color = 'firstplayer';
     } else if (value === 2) {
       color = 'secoundplayer';
     }
 
-  const Around = ({ row, play }) => {
-    console.log(row)
-    return (
 
-      <tr>
-        {row.map((cell, i) => <Back key={i} value={cell} ind={i} play={play} />)}
-      </tr>
-    );
-  };
 
 
 
@@ -196,7 +198,7 @@ import './App.css';
         </div>
       </td>
     );
-  };
+};
 
 
 export default App;
