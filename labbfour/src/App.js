@@ -101,7 +101,7 @@ import './App.css';
         if (result === this.state.firstplayer) {
           this.setState({ board, over: true, message: 'First Player Wins!' });
         } else if (result === this.state.secplayer) {
-          this.setState({ board, over: true, message: 'Secound Player Wins' });
+          this.setState({ board, over: true, message: 'Second Player Wins' });
         } else if (result === 'draw') {
           this.setState({ board, over: true, message: 'Draw' });
         } else {
@@ -115,8 +115,9 @@ import './App.css';
     // Startar ett nytt spel
     newGame() {
       let board = [];
-      console.log(board)
+      // console.log(board)
       for (let first = 0; first < 6; first++) {
+        console.log(first)
         let row = [];
         for (let sec = 0; sec < 7; sec++) { row.push(null) }
         board.push(row);
@@ -171,6 +172,7 @@ import './App.css';
   }
 
   const Around = ({ row, play }) => {
+    console.log(row) // löst?, vad gör jag fel här?
     return (
       <tr>
         {row.map((cell, i) => <Back  value={cell} ind={i} play={play} />)}
@@ -181,10 +183,11 @@ import './App.css';
 
   const Back = ({ value, ind, play }) => {
     let color = 'empty';
+    console.log(ind)
     if (value === 1) {
       color = 'firstplayer';
     } else if (value === 2) {
-      color = 'secoundplayer';
+      color = 'secondplayer';
     }
 
 
