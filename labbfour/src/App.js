@@ -170,7 +170,7 @@ import './App.css';
     let color = 'empty';
     // console.log(ind)
     // console.log(value)
-    // console.log(Row)
+    console.log(play)}
     if (value === 1) {
       color = 'firstplayer';
     } else if (value === 2) {
@@ -179,6 +179,7 @@ import './App.css';
 
   const Around = ({ row, play }) => {
     return (
+      console.log(row)
       <tr>
         {row.map((cell, i) => <Back key={i} value={cell} ind={i} play={play} />)}
       </tr>
